@@ -1,5 +1,6 @@
 import random
 import string
+import argparse
 
 def generate_password(length=12):
     lowercase = string.ascii_lowercase
@@ -22,14 +23,26 @@ def generate_password(length=12):
     
     random.shuffle(password)
     return ''.join(password)
+
 def main():
-    while True:
-        password = generate_password()
+    parser = argparse.ArgumentParser(description="Generate random passwords.")
+    parser.add_argument('--length', type=int, default=12, help='Length of each password')
+    parser.add_argument('--number', type=int, default=5, help='Number of passwords to generate')
+    parser.add_argument('--output', type=str, default='passwords.txt', help='Output file to save passwords')
+
+    args = parser.parse_args()
+
+    passwords = []
+    for _ in range(args.number):
+        password = generate_password(args.length)
+        passwords.append(password)
         print(f"\nGenerated Password: {password}")
-        
-        choice = input("\nNot Satisfied ? Generate another password (y/n): ").lower()
-        if choice != 'y':
-            break
+
+    with open(args.output, 'w') as file:
+        for password in passwords:
+            file.write(password + '\n\n')
+
+    print(f"\nAll passwords have been saved to {args.output}")
 
 if __name__ == "__main__":
     main()
