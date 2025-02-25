@@ -28,7 +28,7 @@ bash
 To use the password generator, run the main Python script:
 bash
 
-  python main.py
+    python main.py
 
 You can customize the password length and character types based on your requirements.
 
