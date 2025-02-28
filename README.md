@@ -15,18 +15,18 @@ Welcome to the Password Generator! This project is a simple Python-based tool de
 ## Installation and Usage
 
 Clone the repository:
-bash
+
 
     git clone https://github.com/Raphaelmos/passwordgen.git
 
 Navigate into the project directory:
-bash
+
 
     cd passwordgen
 
 
 To use the password generator, run the main Python script:
-bash
+
 
     python main.py
 
