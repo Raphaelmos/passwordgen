@@ -40,7 +40,7 @@ def main():
                 file.write(password + '\n\n')
                 file.flush()
 
-    print(f"\nAll passwords are saved in the file: {args.output}")
+    print(f"\nAll passwords are saved in the following file : {args.output}")
 
 if __name__ == "__main__":
     main()
